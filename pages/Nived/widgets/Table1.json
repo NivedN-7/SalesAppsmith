@@ -14,7 +14,7 @@
         {"key": "boxShadow"}
     ],
     "needsHeightForContent": true,
-    "leftColumn": 10,
+    "leftColumn": 5,
     "delimiter": ",",
     "defaultSelectedRowIndex": 0,
     "flexVerticalAlignment": "start",
@@ -72,7 +72,7 @@
     "key": "zuh9u7goie",
     "canFreezeColumn": true,
     "isDeprecated": false,
-    "rightColumn": 44,
+    "rightColumn": 39,
     "textSize": "0.875rem",
     "widgetId": "amvq0x6u75",
     "minWidth": 450,
