@@ -19,6 +19,10 @@
     {
       "id": "Sales",
       "isDefault": true
+    },
+    {
+      "id": "Nived",
+      "isDefault": false
     }
   ],
   "viewMode": false,

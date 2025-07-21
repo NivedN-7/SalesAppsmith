@@ -36,18 +36,14 @@
                 "this.params?.EId"
               ],
               "timeoutInMillisecond": 10000
-            }
-          ],
-          [
+            },
             {
               "id": "Estimate Request_PageObjects.accessControl",
               "name": "PageObjects.accessControl",
               "collectionId": "Estimate Request_PageObjects",
               "confirmBeforeExecute": false,
               "pluginType": "JS",
-              "jsonPathKeys": [
-                "async () => {\n  await UserRoles_Select.run();\n  let role = '';\n  if (UserRoles_Select.data.find(row => row.Name === 'Sales Manager' || row.Name === 'Accounts Receivables')) {\n    console.log('111');\n    role = 'SalesManager';\n  } else if (UserRoles_Select.data.find(row => row.Name === 'Business Manager')) {\n    console.log('222');\n    role = 'BusinessManager';\n  }\n  await storeValue('FilterRole', role, false);\n  console.log('frole', appsmith.store.FilterRole);\n  await Estimate_Select.run();\n}"
-              ],
+              "jsonPathKeys": [],
               "timeoutInMillisecond": 10000
             }
           ],
@@ -71,18 +67,6 @@
                 "appsmith.store.FilterRole",
                 "appsmith.user.username.split('@')[0]",
                 "EstimateState_Select.selectedOptionValue"
-              ],
-              "timeoutInMillisecond": 10000
-            }
-          ],
-          [
-            {
-              "id": "Estimate Request_UserRoles_Select",
-              "name": "UserRoles_Select",
-              "confirmBeforeExecute": false,
-              "pluginType": "DB",
-              "jsonPathKeys": [
-                "appsmith.user.username.split('@')[0]"
               ],
               "timeoutInMillisecond": 10000
             }
