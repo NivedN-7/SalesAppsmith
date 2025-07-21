@@ -1,0 +1,7 @@
+INSERT INTO EstimatePOAttachments
+   (POId, FileName, Comments)
+VALUES (
+       {{this.params?.POId}},
+       {{this.params?.FileName}},
+       {{this.params?.Comments}}
+)

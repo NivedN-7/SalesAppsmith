@@ -1,0 +1,2 @@
+SELECT * FROM EstimatesAttachments
+WHERE EstimatesAttachments.EstimateId = {{this.params?.EId}}

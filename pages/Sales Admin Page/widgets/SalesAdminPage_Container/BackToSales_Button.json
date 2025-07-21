@@ -1,0 +1,39 @@
+{
+    "boxShadow": "0px 0px 2px 2px rgba(0.2, 0.2 ,0.2, 0.2)",
+    "widgetName": "BackToSales_Button",
+    "onClick": "{{navigateTo('Sales', {})}}",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "dynamicPropertyPathList": [
+        {"key": "boxShadow"},
+        {"key": "onClick"}
+    ],
+    "displayName": "Icon Button",
+    "iconSVG": "/static/media/icon.1a0c634a.svg",
+    "searchTags": [
+        "click",
+        "submit"
+    ],
+    "topRow": 0,
+    "bottomRow": 4,
+    "parentRowSpace": 10,
+    "type": "ICON_BUTTON_WIDGET",
+    "hideCard": false,
+    "animateLoading": false,
+    "parentColumnSpace": 19.8125,
+    "dynamicTriggerPathList": [{"key": "onClick"}],
+    "leftColumn": 0,
+    "dynamicBindingPathList": [{"key": "buttonColor"}],
+    "isDisabled": false,
+    "key": "7w2njwxe6k",
+    "isDeprecated": false,
+    "rightColumn": 2,
+    "iconName": "arrow-left",
+    "widgetId": "lxe2beegxp",
+    "isVisible": true,
+    "version": 1,
+    "parentId": "b7s5zrc9ep",
+    "renderMode": "CANVAS",
+    "isLoading": false,
+    "borderRadius": "0.375rem",
+    "buttonVariant": "SECONDARY"
+}

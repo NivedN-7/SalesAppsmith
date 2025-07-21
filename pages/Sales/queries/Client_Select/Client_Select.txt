@@ -1,0 +1,6 @@
+SELECT Id, 
+       Name 
+FROM   Client 
+WHERE  Deleted = 0 
+ORDER BY 
+       UIOrder

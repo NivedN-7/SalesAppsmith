@@ -1,0 +1,8 @@
+SELECT 
+     Code,Name,Id
+FROM 
+    BusinessUnit 
+WHERE 
+     Deleted=0
+ORDER BY
+     Id DESC

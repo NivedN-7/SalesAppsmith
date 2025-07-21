@@ -1,0 +1,3 @@
+UPDATE SalesState 
+  SET Deleted = 1 
+	WHERE Name = {{ SalesState_Table.selectedRow.Name }};

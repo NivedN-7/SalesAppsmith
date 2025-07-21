@@ -1,0 +1,5 @@
+INSERT INTO SalesCompetition 
+     (SalesId, CompetitionId)
+VALUES 
+      ( {{ this.params?.salesId }}, 
+				{{ this.params?.competitionId }});

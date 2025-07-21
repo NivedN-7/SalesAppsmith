@@ -1,0 +1,6 @@
+SELECT SalesCompetition.Id, 
+       SalesCompetition.CompetitionId, 
+			 Competition.`Name` 
+FROM   SalesCompetition INNER JOIN Competition 
+WHERE SalesCompetition.CompetitionId = Competition.Id 
+      AND SalesCompetition.SalesId = {{ appsmith.store.currentSalesId }} ;

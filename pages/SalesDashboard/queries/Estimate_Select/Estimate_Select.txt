@@ -1,0 +1,10 @@
+SELECT DISTINCT Estimate.Id AS EId, Estimate.Number,
+       Estimate.currentState AS EstimateState
+			
+FROM   Estimate 
+      INNER JOIN Sales 
+	
+WHERE Estimate.SalesId = {{this?.params.Id}}
+		  AND Estimate.Deleted = 0
+ORDER BY 
+      Estimate.Id;

@@ -1,0 +1,10 @@
+SELECT DISTINCT AppUser.Id as value, 
+       UserName as label 
+FROM   AppUser 
+	     INNER JOIN UserRole ON AppUser.Id=UserRole.UserId  
+	     INNER JOIN Role ON  UserRole.RoleId=Role.Id 
+			 INNER JOIN Sales ON Sales.SalesManagerId = AppUser.Id
+WHERE 
+		   Role.Deleted = 0 
+			 AND Role.Name = 'Sales Manager' AND Sales.CurrentState='{{ appsmith.store?.currentStateName || 'Lead' }}' AND {{this.params?.Client || true}} 
+			 AND AppUser.Deleted = 0

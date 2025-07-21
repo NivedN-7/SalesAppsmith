@@ -1,0 +1,28 @@
+SELECT Estimate.Id AS EId, 
+       Estimate.currentState AS EstimateState,
+			 Sales.*,  
+			 Estimate.EmailList AS EmailList, 
+			 Estimate.CCEmailList AS CCEmailList, 
+			 Estimate.Notes AS Notes, 
+			 Company.Name AS Company, 
+			 BusinessUnit.Name AS BusinessUnit, 
+			 Client.Name AS Client 
+FROM   Estimate 
+      INNER JOIN Sales 
+		  INNER JOIN Client ON Sales.ClientId = Client.Id
+		  INNER JOIN BusinessUnit ON Sales.BusinessUnitId = BusinessUnit.Id
+		  INNER JOIN Company ON Sales.CompanyId = Company.Id
+			LEFT JOIN AppUser AS BusinessManager ON Sales.BusinessManagerId = BusinessManager.Id 
+WHERE Estimate.SalesId = Sales.Id 
+		  AND Estimate.CurrentState = {{EstimateState_Select.selectedOptionValue}}
+		  AND Estimate.Deleted = 0
+			AND (
+        (
+            '{{appsmith.store.FilterRole}}' = 'BusinessManager'
+            AND BusinessManager.UserName = '{{appsmith.user.username.split('@')[0]}}'
+        )
+        OR
+        '{{appsmith.store.FilterRole}}' = 'SalesManager'
+    )
+ORDER BY 
+      Estimate.Id;

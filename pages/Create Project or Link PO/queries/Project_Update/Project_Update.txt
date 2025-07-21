@@ -1,0 +1,15 @@
+UPDATE Project 
+SET
+    Number = {{ Project_Number_Input.text }},
+    Name = {{ Project_Name_Input.text }},
+    ProjectManagerId = {{ Project_PM_Select.selectedOptionValue }},
+    BusinessManagerId = {{ Project_BM_Select.selectedOptionValue }},
+		ClientId = {{Client_Project_Select.data?.find((row) =>
+ row.Code ==Client_Select_Input.selectedOptionValue)?.Id}},
+ 		BusinessUnitId={{BUProject_Select.data?.find((row) =>
+ row.Code ==BU_Select_Input.selectedOptionValue)?.Id}},
+		CompanyId = {{Company_Input.selectedOptionValue}},
+		LocationId = {{ Project_Location_Select.selectedOptionValue }},
+		EmailList = {{Email_Input1.text}},
+		CCEmailList = {{CCEmail_Input1.text}}
+WHERE Project.Id = {{ Project_Select_Table.selectedRow.Id }};

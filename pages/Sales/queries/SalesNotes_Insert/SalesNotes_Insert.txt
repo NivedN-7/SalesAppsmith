@@ -1,0 +1,8 @@
+INSERT INTO SalesNotes 
+    (SalesId, Note, Date, Deleted)
+VALUES (
+		{{ this.params?.salesId || -1 }}, 
+		{{ this.params?.salesNote || -1 }} , 
+		{{ this.params?.salesNoteDate || -1 }}, 
+		0
+	  );

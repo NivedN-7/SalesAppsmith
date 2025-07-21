@@ -1,0 +1,6 @@
+SELECT  
+      MAX(Number) AS MaxNum
+FROM Project  
+WHERE SUBSTRING(Number,1,3)={{BU_Select_Input.selectedOptionValue + Client_Select_Input.selectedOptionValue}}
+ORDER BY 
+      Project.Id Desc;

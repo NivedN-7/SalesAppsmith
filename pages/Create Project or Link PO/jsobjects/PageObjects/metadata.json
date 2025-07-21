@@ -1,0 +1,20 @@
+{
+  "unpublishedCollection": {
+    "name": "PageObjects",
+    "pageId": "Create Project or Link PO",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "columnWidth",
+        "value": "4"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "Create Project or Link PO_PageObjects",
+  "deleted": false,
+  "gitSyncId": "63e5d847e80cbd4992442eae_63e5d84be80cbd4992442ff7"
+}

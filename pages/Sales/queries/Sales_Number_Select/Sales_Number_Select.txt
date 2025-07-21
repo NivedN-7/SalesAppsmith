@@ -1,0 +1,4 @@
+SELECT MAX(SUBSTRING(Number,7,2)) AS MaxSalesNumber
+FROM Sales
+WHERE
+ SUBSTRING(Number,1,6)={{moment().format('YYMMDD')}};

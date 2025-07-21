@@ -1,0 +1,5 @@
+UPDATE Sales 
+SET
+       CurrentState = {{this.params?.nextState}},
+       Deleted = 0
+WHERE  Sales.Id = {{this.params?.salesId}};

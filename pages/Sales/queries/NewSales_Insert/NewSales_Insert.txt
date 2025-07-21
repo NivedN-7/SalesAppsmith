@@ -1,0 +1,12 @@
+INSERT INTO Sales 
+           (Number, Description, BusinessUnitId, SalesManagerId, 
+						ClientId, CompanyId, CurrentState, Deleted,BusinessManagerId)
+VALUES    ( {{ this.params?.Number }}, 
+					{{ this.params?.Description }}, 
+					{{ this.params?.BusinessUnitId }},
+					{{ this.params?.SalesManagerId }}, 
+					{{ this.params?.ClientId }}, 
+					{{ this.params?.CompanyId }},
+					{{ this.params?.CurrentState }},
+					0,
+					{{this.params?.BM}});

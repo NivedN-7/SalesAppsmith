@@ -1,0 +1,7 @@
+INSERT INTO SalesState
+  (Name, UIOrder )
+VALUES
+  (
+		{{SalesState_Name_Input.text}},
+		{{parseInt(SalesState_Order_Input.text)}}		
+  );

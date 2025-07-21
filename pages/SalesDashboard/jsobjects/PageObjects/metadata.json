@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "PageObjects",
+    "pageId": "SalesDashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "SalesDashboard_PageObjects",
+  "deleted": false,
+  "gitSyncId": "669f3a27b262492468bb49d5_66beed14b262492468bb9898"
+}

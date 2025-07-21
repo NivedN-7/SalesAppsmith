@@ -1,0 +1,5 @@
+SELECT * FROM Application LIMIT 10;SELECT Role.Name 
+FROM Role 
+INNER JOIN UserRole ON Role.Id  = UserRole.RoleId  
+INNER JOIN AppUser ON UserRole.UserId = AppUser.Id  
+WHERE AppUser.UserName = '{{appsmith.user.username.split('@')[0]}}'

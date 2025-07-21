@@ -1,0 +1,5 @@
+SELECT * 
+FROM   SalesNotes 
+WHERE  SalesNotes.Deleted = 0 
+       AND SalesNotes.SalesId = {{ appsmith.store.currentSalesId }} ORDER BY 
+			 date DESC

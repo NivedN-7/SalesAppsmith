@@ -1,0 +1,8 @@
+SELECT Id, 
+       SalesHistory.SalesState, 
+			 SalesHistory.Date 
+FROM   SalesHistory 
+WHERE  SalesHistory.SalesId = {{ appsmith.store.currentSalesId }} 
+       AND SalesHistory.Deleted = 0 
+ORDER BY 
+       SalesHistory.Id, SalesHistory.Date DESC;

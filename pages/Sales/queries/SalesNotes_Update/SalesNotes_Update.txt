@@ -1,0 +1,5 @@
+UPDATE SalesNotes 
+SET
+    Note = {{ this.params?.salesNote }},
+    Date = {{ this.params?.salesNoteDate }}
+WHERE SalesNotes.Id = {{ this.params?.salesNotesId }};

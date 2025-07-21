@@ -1,0 +1,10 @@
+SELECT AppUser.Id AS value, 
+       UserName AS label 
+FROM   AppUser 
+	     INNER JOIN UserRole 
+	     INNER JOIN Role 
+WHERE  AppUser.Id=UserRole.UserId 
+       AND UserRole.RoleId=Role.Id 
+			 AND Role.Deleted = 0 
+			 AND Role.Name = 'Business Manager' 
+			 AND AppUser.Deleted = 0;

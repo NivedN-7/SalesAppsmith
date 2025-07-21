@@ -1,0 +1,3 @@
+UPDATE EstimateItem 
+SET    Deleted = 1
+WHERE  EstimateItem.Id = {{ EstimateItem_Table.selectedRow.Id }};

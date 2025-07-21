@@ -1,0 +1,4 @@
+UPDATE SalesDecisionReason
+  SET Name = {{SalesReason_Reason_Input.text}}, 
+	    UIOrder={{parseInt(SalesReason_Order_Input.text)}}
+  WHERE Name = {{SalesReason_Table.selectedRow.Name}};

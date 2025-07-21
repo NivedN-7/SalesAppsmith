@@ -1,0 +1,7 @@
+INSERT INTO EstimatesAttachments
+   (EstimateId, FileName, Comments)
+VALUES (
+       {{this.params?.EId}},
+       {{this.params?.FileName}},
+       {{this.params?.Comments}}
+)

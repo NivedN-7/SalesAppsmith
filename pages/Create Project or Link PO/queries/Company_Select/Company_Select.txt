@@ -1,0 +1,6 @@
+SELECT Id AS value, 
+       Name AS label 
+FROM   Company 
+WHERE  Deleted = 0 
+ORDER BY 
+       UIOrder

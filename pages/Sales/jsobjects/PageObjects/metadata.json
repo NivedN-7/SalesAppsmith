@@ -1,0 +1,20 @@
+{
+  "unpublishedCollection": {
+    "name": "PageObjects",
+    "pageId": "Sales",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "roles_with_access",
+        "value": "[\"Corporate Admin\"]"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "Sales_PageObjects",
+  "deleted": false,
+  "gitSyncId": "63e5d847e80cbd4992442eae_63e5d84be80cbd4992442ff9"
+}

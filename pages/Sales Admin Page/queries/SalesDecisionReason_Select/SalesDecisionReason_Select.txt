@@ -1,0 +1,3 @@
+SELECT * FROM SalesDecisionReason 
+WHERE Deleted = 0 
+ORDER BY UIOrder

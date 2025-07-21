@@ -1,0 +1,44 @@
+SELECT 
+  Project.Id, 
+  Project.Number,
+  Project.Name, 
+  ProjectManager.UserName AS PM, 
+  Project.ProjectManagerId AS PMId, 
+  BusinessManager.UserName AS BM,
+  Project.BusinessManagerId AS BMId, 
+  Project.State,
+  Project.ClientId, 
+  Project.CompanyId, 
+  Project.LocationId, 
+  Project.EmailList, 
+  Project.CCEmailList,
+  Project.BusinessUnitId 
+FROM Project 
+LEFT JOIN AppUser AS ProjectManager ON Project.ProjectManagerId = ProjectManager.Id
+LEFT JOIN AppUser AS BusinessManager ON Project.BusinessManagerId = BusinessManager.Id
+WHERE 
+  Project.Deleted = 0 
+  AND (
+  '{{appsmith.store.FilterRole}}' = 'SalesManager'
+  OR (
+    '{{appsmith.store.FilterRole}}' = 'ProjectManager'
+    AND ProjectManager.UserName = '{{appsmith.user.username.split("@")[0]}}'
+  )
+  OR (
+    '{{appsmith.store.FilterRole}}' = 'BusinessManager'
+    AND BusinessManager.UserName = '{{appsmith.user.username.split("@")[0]}}'
+  )
+  OR (
+    '{{appsmith.store.FilterRole}}' = 'ProjectAndBusinessManager'
+    AND (
+      ProjectManager.UserName = '{{appsmith.user.username.split("@")[0]}}'
+      OR BusinessManager.UserName = '{{appsmith.user.username.split("@")[0]}}'
+    )
+  )
+)
+  AND {{this.params?.clientFilter || true}}
+  AND (
+    Project.State = '{{Active_MultiSelectFilter.selectedOptionLabels[0]}}' 
+    OR Project.State = '{{Active_MultiSelectFilter.selectedOptionLabels[1]}}'
+  )
+ORDER BY Project.Id DESC;

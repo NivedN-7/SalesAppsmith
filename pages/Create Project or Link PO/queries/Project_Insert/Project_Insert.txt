@@ -1,0 +1,16 @@
+INSERT INTO Project 
+     (Number, Name, ProjectManagerId, BusinessManagerId, ClientId,BusinessUnitId, LocationId, CompanyId, EmailList, CCEmailList,State, Deleted)
+VALUES ({{ Project_Number_Input.text }}, 
+			  {{ Project_Name_Input.text }},
+				{{ Project_PM_Select.selectedOptionValue }}, 
+				{{ Project_BM_Select.selectedOptionValue }}, 
+				{{Client_Project_Select.data?.find((row) =>
+ row.Code ==Client_Select_Input.selectedOptionValue)?.Id}},
+				{{BUProject_Select.data?.find((row) =>
+ row.Code ==BU_Select_Input.selectedOptionValue)?.Id}},
+				{{ Project_Location_Select.selectedOptionValue }},
+				{{ Company_Input.selectedOptionValue }},
+				{{Email_Input1.text}},
+				{{CCEmail_Input1.text}},
+				'Active',
+				0);

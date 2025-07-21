@@ -1,0 +1,5 @@
+SELECT UserName AS name 
+FROM AppUser 
+INNER JOIN UserRole ON AppUser.Id = UserRole.UserId 
+INNER JOIN Role ON UserRole.RoleId = Role.Id 
+WHERE Role.Name IN ({{"'"+PageObjects.roles_with_access.join("','")+"'"}})

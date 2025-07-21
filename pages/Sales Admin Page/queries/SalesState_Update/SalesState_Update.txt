@@ -1,0 +1,4 @@
+UPDATE SalesState
+  SET Name = {{SalesState_Name_Input.text}},
+	    UIOrder={{parseInt(SalesState_Order_Input.text)}}
+  WHERE Name = {{ SalesState_Table.selectedRow.Name }};

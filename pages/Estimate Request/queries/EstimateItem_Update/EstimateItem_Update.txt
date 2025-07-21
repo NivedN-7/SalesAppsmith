@@ -1,0 +1,7 @@
+UPDATE EstimateItem 
+SET 
+      Number = {{EI_Number_Input.text}},
+      Description = {{EI_Description_Input.text}},
+      Quantity = {{parseFloat(EI_Qty_Input.text)}},
+      Amount = {{parseFloat(EI_Amount_Input.text)}}
+WHERE Id = {{ EstimateItem_Table.selectedRow.Id }};

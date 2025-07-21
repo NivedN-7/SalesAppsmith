@@ -1,0 +1,4 @@
+UPDATE Project 
+SET
+       Deleted = 1
+WHERE  Project.Id = {{ Project_Select_Table.selectedRow.Id}};

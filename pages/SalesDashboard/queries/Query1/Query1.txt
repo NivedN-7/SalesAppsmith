@@ -1,0 +1,6 @@
+SELECT Distinct Client.Id AS value, 
+                Client.Name AS label 
+FROM  Client
+    INNER JOIN Sales ON Client.Id = Sales.ClientId
+		
+WHERE Sales.SalesManagerId in (4) AND  Client.Deleted = 0 

@@ -1,0 +1,3 @@
+SELECT * 
+FROM   SalesDecision 
+WHERE  SalesDecision.SalesId = {{ appsmith.store.currentSalesId }} LIMIT 10;

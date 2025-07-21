@@ -1,0 +1,12 @@
+INSERT INTO Sales 
+           (Number, Description, BusinessUnitId,
+						SalesManagerId, ClientId, CompanyId, CurrentState, Deleted,BusinessManagerId)
+VALUES    ( {{ Sales_Number_Input.text }}, 
+					{{ Sales_Description_Input.text }}, 
+					{{ Sales_BU_Select.selectedOptionValue }},
+					{{Sales_SalesManager_Select.selectedOptionValue}}, 
+					{{Sales_Client_Select.selectedOptionValue }}, 
+					{{ Sales_Category_Select.selectedOptionValue }}, 
+					 'Lead',
+					 0,
+					{{Sales_BM_Select.selectedOptionValue}});

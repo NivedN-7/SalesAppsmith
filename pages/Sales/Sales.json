@@ -1,0 +1,237 @@
+{
+  "unpublishedPage": {
+    "name": "Sales",
+    "slug": "sales",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 742,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 780,
+          "containerStyle": "none",
+          "snapRows": 125,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 89,
+          "minHeight": 860,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Sales_BU_Select",
+              "name": "BU_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_BusinessManager_Select",
+              "name": "BusinessManager_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_CA_Select",
+              "name": "CA_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "\"'\"+PageObjects.roles_with_access.join(\"','\")+\"'\""
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_Client_Select",
+              "name": "Client_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_Company_Select",
+              "name": "Company_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_Competition_Select",
+              "name": "Competition_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_GlobalVariables.checkSalesAdminAccess",
+              "name": "GlobalVariables.checkSalesAdminAccess",
+              "collectionId": "Sales_GlobalVariables",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  let roles = `'${PageObjects.roles_with_access.join(',')}'`;\n  const result = await AccessCheck_Select.run({\n    'userName': appsmith.user.username.split('@')[0],\n    'roles': roles\n  });\n  storeValue('showSalesAdmin', result[0].Count === 0 ? false : true, false);\n  return result;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_PageObjects.accessControl",
+              "name": "PageObjects.accessControl",
+              "collectionId": "Sales_PageObjects",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  await UserRoles_Select.run();\n  let role = '';\n  if (UserRoles_Select.data.find(row => row.Name === 'Sales Manager' || row.Name === 'Accounts Receivables')) {\n    console.log('111');\n    role = 'SalesManager';\n  } else if (UserRoles_Select.data.find(row => row.Name === 'Business Manager')) {\n    console.log('222');\n    role = 'BusinessManager';\n  }\n  await storeValue('FilterRole', role, false);\n  console.log('frole', appsmith.store.FilterRole);\n  await Sales_Select.run();\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_SalesDecisionReason_Select",
+              "name": "SalesDecisionReason_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_SalesManager_Select",
+              "name": "SalesManager_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Sales_SalesCompetition_Select",
+              "name": "SalesCompetition_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                " appsmith.store.currentSalesId "
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_SalesDecision_Select",
+              "name": "SalesDecision_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                " appsmith.store.currentSalesId "
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_SalesHistory_Select",
+              "name": "SalesHistory_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                " appsmith.store.currentSalesId "
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_SalesNotes_Select",
+              "name": "SalesNotes_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                " appsmith.store.currentSalesId "
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Sales_ClientFilter_select",
+              "name": "ClientFilter_select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "this.params?.SalesManager || true",
+                " appsmith.store?.currentStateName || 'Lead' "
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_SalesManagerFilter_Select",
+              "name": "SalesManagerFilter_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "this.params?.Client || true",
+                " appsmith.store?.currentStateName || 'Lead' "
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_Sales_Select",
+              "name": "Sales_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "appsmith.store.FilterRole",
+                " this.params?.SalesManagerFilter || true ",
+                "appsmith.user.username.split('@')[0]",
+                " appsmith.store?.currentStateName || 'Lead' ",
+                " this.params?.ClientFilter || true "
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Sales_UserRoles_Select",
+              "name": "UserRoles_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "appsmith.user.username.split('@')[0]"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Sales_PageObjects.selectInitialState",
+              "name": "PageObjects.selectInitialState",
+              "collectionId": "Sales_PageObjects",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  await Process.clickState(\"Lead\", ClientFilter_select, SalesManagerFilter_Select, Sales_Select);\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Sales",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "63e5d847e80cbd4992442eae_63e5d847e80cbd4992442eb9"
+}

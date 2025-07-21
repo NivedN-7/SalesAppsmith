@@ -1,0 +1,5 @@
+INSERT INTO SalesDecision (SalesId, SalesDecisionReason)
+VALUES 
+       ( {{ this.params?.salesId }}, 
+				 {{ this.params?.salesDecisionReasonId }} 
+				);

@@ -1,0 +1,3 @@
+SELECT * 
+FROM   EstimateItem 
+WHERE  EstimateItem.EstimateId = {{Estimate_Table.selectedRow.EId}} AND EstimateItem.Deleted = 0; 

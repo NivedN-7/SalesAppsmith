@@ -1,0 +1,1 @@
+{{FilePicker.files[0]?.data}}

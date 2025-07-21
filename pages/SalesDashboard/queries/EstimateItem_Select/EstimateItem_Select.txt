@@ -1,0 +1,3 @@
+SELECT * 
+FROM   EstimateItem 
+WHERE  EstimateItem.EstimateId = {{this?.params.EId}} AND EstimateItem.Deleted = 0; 

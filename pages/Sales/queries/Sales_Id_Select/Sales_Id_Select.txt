@@ -1,0 +1,8 @@
+SELECT 
+    Id,Number
+FROM 
+    Sales 
+WHERE 
+    Deleted = 0 
+ORDER BY 
+    Id DESC;

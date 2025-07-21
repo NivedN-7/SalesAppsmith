@@ -1,0 +1,3 @@
+SELECT COUNT(*) AS row_count 
+FROM `{{this.params.tableName}}` 
+WHERE `{{this.params.columnName}}` = '{{this.params.columnValue}}'; 

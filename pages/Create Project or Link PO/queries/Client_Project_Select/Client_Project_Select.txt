@@ -1,0 +1,5 @@
+SELECT Id ,
+       Name ,
+			 Code 
+FROM   Client 
+WHERE  Client.Deleted = 0;

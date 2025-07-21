@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Process",
+    "pageId": "Sales",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Sales_Process",
+  "deleted": false,
+  "gitSyncId": "63e5d847e80cbd4992442eae_63e5d84be80cbd4992442ffb"
+}

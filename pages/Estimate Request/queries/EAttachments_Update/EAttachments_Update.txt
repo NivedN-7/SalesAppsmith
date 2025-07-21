@@ -1,0 +1,3 @@
+UPDATE EstimatesAttachments
+  SET Comments = {{this.params?.FileComments}}
+  WHERE Id = {{this.params?.FileId}};

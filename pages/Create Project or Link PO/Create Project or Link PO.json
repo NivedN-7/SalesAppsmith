@@ -1,0 +1,169 @@
+{
+  "unpublishedPage": {
+    "name": "Create Project or Link PO",
+    "slug": "create-project-or-link-po",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 742,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 810,
+          "containerStyle": "none",
+          "snapRows": 66,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 89,
+          "minHeight": 680,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Create Project or Link PO_BUProject_Select",
+              "name": "BUProject_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Create Project or Link PO_BusinessManager_Select",
+              "name": "BusinessManager_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Create Project or Link PO_Client_Project_Select",
+              "name": "Client_Project_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Create Project or Link PO_Client_Select",
+              "name": "Client_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Create Project or Link PO_Company_Select",
+              "name": "Company_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Create Project or Link PO_EPOAttachments_Select",
+              "name": "EPOAttachments_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "this.params?.POId"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Create Project or Link PO_ProjectLocation_Select",
+              "name": "ProjectLocation_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Create Project or Link PO_ProjectManager_Select",
+              "name": "ProjectManager_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Create Project or Link PO_PO_Number_Select",
+              "name": "PO_Number_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Create Project or Link PO_UserRoles_Select",
+              "name": "UserRoles_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "appsmith.user.username.split('@')[0]"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Create Project or Link PO_Project_PO_Select",
+              "name": "Project_PO_Select",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "Project_Select_Table.selectedRow.Id"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Create Project or Link PO_ProjectNumberSort",
+              "name": "ProjectNumberSort",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "BU_Select_Input.selectedOptionValue + Client_Select_Input.selectedOptionValue"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Create Project or Link PO_PageObjects.accessControl",
+              "name": "PageObjects.accessControl",
+              "collectionId": "Create Project or Link PO_PageObjects",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  await UserRoles_Select.run();\n  const roles = UserRoles_Select.data.map(row => row.Name);\n  let role = '';\n  const isSales = roles.includes('Sales Manager') || roles.includes('Accounts Receivables');\n  const isPM = roles.includes('Project Manager');\n  const isBM = roles.includes('Business Manager');\n  if (isSales) {\n    role = 'SalesManager';\n  } else if (isPM && isBM) {\n    role = 'ProjectAndBusinessManager';\n  } else if (isPM) {\n    role = 'ProjectManager';\n  } else if (isBM) {\n    role = 'BusinessManager';\n  }\n  await storeValue('FilterRole', role, false);\n  await Project_Select.run();\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Create Project or Link PO",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "63e5d847e80cbd4992442eae_63e5d847e80cbd4992442eb7"
+}

@@ -1,0 +1,11 @@
+UPDATE Sales 
+SET
+    Number = {{Sales_Number_Input.text}},
+    Description = {{Sales_Description_Input.text}},
+    BusinessUnitId = {{parseInt(Sales_BU_Select.selectedOptionValue)}},
+    SalesManagerId = {{parseInt(Sales_SalesManager_Select.selectedOptionValue)}},
+    ClientId = {{parseInt(Sales_Client_Select.selectedOptionValue)}},
+    CompanyId = {{parseInt(Sales_Category_Select.selectedOptionValue)}},
+    Deleted = 0,
+		BusinessManagerId = {{parseInt(Sales_BM_Select.selectedOptionValue)}}
+WHERE Id = {{ Sales_Table.selectedRow.SalesId }};

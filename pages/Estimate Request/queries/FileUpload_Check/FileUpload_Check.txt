@@ -1,0 +1,3 @@
+SELECT * FROM PurchaseOrder 
+INNER JOIN EstimatePOAttachments ON PurchaseOrder.Id = EstimatePOAttachments.POId
+WHERE PurchaseOrder.Id = {{this.params?.POId}}

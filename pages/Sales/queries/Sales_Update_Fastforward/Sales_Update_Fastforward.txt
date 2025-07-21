@@ -1,0 +1,18 @@
+START TRANSACTION;
+UPDATE Sales 
+SET
+    CurrentState = 'Signoff',
+    Deleted = 0
+WHERE Sales.Id = {{this.params?.id}};
+
+INSERT INTO SalesHistory (SalesId, SalesState, Date, Deleted)
+VALUES 
+		({{this.params.id}},'RFP',{{this.params?.date}}, 0),
+		({{this.params?.id}}, 'Proposal',{{this.params.date}}, 0),
+		({{this.params?.id}}, 'Evaluation',{{this.params?.date}}, 0),
+		({{this.params?.id}}, 'Signoff',{{this.params.date}}, 0);
+		
+INSERT INTO Estimate (SalesId, CurrentState, Deleted)
+VALUES ({{this.params?.id}}, 'Prepare', 0);
+
+COMMIT;

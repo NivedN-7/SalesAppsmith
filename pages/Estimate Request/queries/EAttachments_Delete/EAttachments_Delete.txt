@@ -1,0 +1,3 @@
+DELETE 
+FROM EstimatesAttachments
+WHERE Id = {{this.params?.FileId}};

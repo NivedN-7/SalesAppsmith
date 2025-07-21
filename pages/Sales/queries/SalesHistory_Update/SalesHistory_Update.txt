@@ -1,0 +1,4 @@
+UPDATE SalesHistory 
+SET 
+       Date = {{moment(SalesHistory_Date_Input.selectedDate).format("YYYY-MM-DD") }}
+WHERE Id = {{ SalesHistory_Table.selectedRow.Id }};

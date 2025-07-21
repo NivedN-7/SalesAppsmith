@@ -1,0 +1,33 @@
+SELECT 
+    Sales.Id as SalesId, Sales.Number, Sales.Description,
+    Sales.ClientId, Sales.CompanyId,
+    Sales.CurrentState, Sales.BusinessUnitId,
+    Client.Name AS Client, 
+    BusinessUnit.Name AS BusinessUnit,
+    SalesManager.Id AS SalesManagerId,
+    SalesManager.UserName AS SalesManager,
+    BusinessManager.Id AS BusinessManagerId,
+    BusinessManager.UserName AS BusinessManager
+FROM Sales 
+LEFT JOIN Client ON Sales.ClientId = Client.Id
+INNER JOIN BusinessUnit ON Sales.BusinessUnitId = BusinessUnit.Id
+LEFT JOIN AppUser AS SalesManager ON Sales.SalesManagerId = SalesManager.Id
+LEFT JOIN AppUser AS BusinessManager ON Sales.BusinessManagerId = BusinessManager.Id
+LEFT JOIN UserRole ON SalesManager.Id = UserRole.UserId  
+LEFT JOIN Role ON UserRole.RoleId = Role.Id
+WHERE 
+    Role.Name = 'Sales Manager' -- Mandatory condition
+    AND (
+        -- If the user has only the "Business Manager" role, apply the filter
+        (
+            '{{appsmith.store.FilterRole}}' = 'BusinessManager'
+            AND BusinessManager.UserName = '{{appsmith.user.username.split('@')[0]}}'
+        )
+        OR
+        -- If the user has the "Sales Manager" role, do not apply the filter
+        '{{appsmith.store.FilterRole}}' = 'SalesManager'
+    )
+    AND {{ this.params?.ClientFilter || true }}
+    AND {{ this.params?.SalesManagerFilter || true }} 
+    AND Sales.Deleted = 0 
+ORDER BY Sales.Id DESC;

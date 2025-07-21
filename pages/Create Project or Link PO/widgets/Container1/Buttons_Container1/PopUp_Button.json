@@ -1,0 +1,50 @@
+{
+    "boxShadow": "0px 0px 2px 1.5px rgba(0, 0, 0, 0.25)",
+    "mobileBottomRow": 4,
+    "widgetName": "PopUp_Button",
+    "onClick": "{{storeValue('progressstatus','0');showModal('FileUpload_Modal');EPOAttachments_Select.run({\"POId\":Project_PO_Table.selectedRow.POId});storeValue('ActualFileName','');storeValue('POId',Project_PO_Table.selectedRow.POId);storeValue('statename','FileCheck');storeValue('progressstatus',0);}}",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "dynamicPropertyPathList": [
+        {"key": "isDisabled"},
+        {"key": "onClick"},
+        {"key": "boxShadow"}
+    ],
+    "displayName": "Icon button",
+    "iconSVG": "/static/media/icon.80fc7466c0d7181ec0271de7fda795ec.svg",
+    "searchTags": [
+        "click",
+        "submit"
+    ],
+    "topRow": 0,
+    "bottomRow": 4,
+    "tooltip": "Download PO Files",
+    "parentRowSpace": 10,
+    "type": "ICON_BUTTON_WIDGET",
+    "hideCard": false,
+    "mobileRightColumn": 62,
+    "animateLoading": false,
+    "parentColumnSpace": 17.625,
+    "dynamicTriggerPathList": [{"key": "onClick"}],
+    "leftColumn": 24,
+    "dynamicBindingPathList": [
+        {"key": "buttonColor"},
+        {"key": "isDisabled"}
+    ],
+    "isDisabled": "{{Project_PO_Table.selectedRowIndex==-1}}",
+    "key": "dhazzocl7v",
+    "isDeprecated": false,
+    "rightColumn": 28,
+    "iconName": "cloud-download",
+    "widgetId": "gxiyln9pfs",
+    "minWidth": 50,
+    "isVisible": true,
+    "version": 1,
+    "parentId": "3hd0p4ws70",
+    "renderMode": "CANVAS",
+    "isLoading": false,
+    "mobileTopRow": 0,
+    "responsiveBehavior": "hug",
+    "borderRadius": "0.375rem",
+    "mobileLeftColumn": 58,
+    "buttonVariant": "SECONDARY"
+}

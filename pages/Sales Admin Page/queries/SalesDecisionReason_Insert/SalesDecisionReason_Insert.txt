@@ -1,0 +1,7 @@
+INSERT INTO SalesDecisionReason
+  (Name, UIOrder)
+VALUES
+  (
+		{{SalesReason_Reason_Input.text}},
+		{{parseInt(SalesReason_Order_Input.text)}}
+  );

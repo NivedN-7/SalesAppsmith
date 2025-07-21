@@ -1,0 +1,8 @@
+{{
+{
+	"receiver":this.params.receiver,
+	"message":this.params.message,
+	"onetoone":this.params.onetoone,
+	"group":this.params.group,
+}
+}}

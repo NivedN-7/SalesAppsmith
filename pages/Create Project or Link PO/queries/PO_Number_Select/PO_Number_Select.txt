@@ -1,0 +1,3 @@
+SELECT * 
+FROM   PurchaseOrder 
+WHERE  Deleted = 0;

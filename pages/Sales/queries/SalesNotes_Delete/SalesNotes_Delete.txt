@@ -1,0 +1,4 @@
+UPDATE SalesNotes 
+SET
+       Deleted = 1
+WHERE  SalesNotes.Id = {{ this.params?.salesNotesId }};

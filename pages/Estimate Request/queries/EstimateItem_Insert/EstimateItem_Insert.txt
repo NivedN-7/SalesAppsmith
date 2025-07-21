@@ -1,0 +1,8 @@
+INSERT INTO EstimateItem 
+       (EstimateId, Number, Description, Quantity, Amount, Deleted)
+VALUES ({{ Estimate_Table.selectedRow.EId }}, 
+				{{EI_Number_Input.text}}, 
+				{{EI_Description_Input.text}}, 
+				{{parseFloat(EI_Qty_Input.text)}}, 
+				{{parseFloat(EI_Amount_Input.text)}}, 
+				0);

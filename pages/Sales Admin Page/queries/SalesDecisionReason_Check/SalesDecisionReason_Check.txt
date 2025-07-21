@@ -1,0 +1,2 @@
+SELECT * FROM SalesDecisionReason 
+WHERE Name = '{{this.params.columnValue}}'

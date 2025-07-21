@@ -1,0 +1,6 @@
+SELECT Competition.Id,
+       Competition.Name 
+FROM   Competition 
+WHERE  Competition.Deleted = 0 
+ORDER BY 
+       Competition.UIOrder;

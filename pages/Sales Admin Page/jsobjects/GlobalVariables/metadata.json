@@ -1,0 +1,24 @@
+{
+  "unpublishedCollection": {
+    "name": "GlobalVariables",
+    "pageId": "Sales Admin Page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "LabelColor",
+        "value": "'#33838f'"
+      },
+      {
+        "name": "IconColor",
+        "value": "'#48BF91'"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "Sales Admin Page_GlobalVariables",
+  "deleted": false,
+  "gitSyncId": "63e5d847e80cbd4992442eae_63e5d84be80cbd4992442ff3"
+}

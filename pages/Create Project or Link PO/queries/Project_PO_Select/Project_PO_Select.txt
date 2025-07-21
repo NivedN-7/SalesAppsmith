@@ -1,0 +1,22 @@
+SELECT 
+  PurchaseOrder.Number AS PONumber, 
+  PurchaseOrder.Id AS POId,
+  Sales.Number, 
+  Sales.Description, 
+  ProjectPO.Id AS Id,
+  SUM(PurchaseOrderItem.Amount * PurchaseOrderItem.Quantity) AS TotalPOCost
+FROM Sales 
+INNER JOIN Estimate ON Sales.Id = Estimate.SalesId 
+INNER JOIN PurchaseOrder ON Estimate.Id = PurchaseOrder.EstimateId 
+INNER JOIN ProjectPO ON PurchaseOrder.Id = ProjectPO.PurchaseOrderId 
+INNER JOIN Project ON ProjectPO.ProjectId = Project.Id 
+INNER JOIN PurchaseOrderItem ON PurchaseOrder.Id = PurchaseOrderItem.PurchaseOrderId
+WHERE 
+  ProjectPO.ProjectId = {{Project_Select_Table.selectedRow.Id}} 
+  AND PurchaseOrder.Deleted = 0
+GROUP BY 
+  PurchaseOrder.Number, 
+  PurchaseOrder.Id,
+  Sales.Number, 
+  Sales.Description, 
+  ProjectPO.Id;

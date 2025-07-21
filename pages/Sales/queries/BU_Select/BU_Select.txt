@@ -1,0 +1,6 @@
+SELECT Id, 
+       Name 
+FROM   BusinessUnit 
+WHERE  Deleted = 0 
+ORDER BY 
+       UIOrder

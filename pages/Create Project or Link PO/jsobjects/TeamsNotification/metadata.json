@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "TeamsNotification",
+    "pageId": "Create Project or Link PO",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Create Project or Link PO_TeamsNotification",
+  "deleted": false,
+  "gitSyncId": "6870b594c2b7da0795fbff0a_6870b6fcc2b7da0795fc0016"
+}

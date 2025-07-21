@@ -1,0 +1,2 @@
+DELETE FROM ProjectPO 
+WHERE Id = {{Project_PO_Table.selectedRow.Id}}

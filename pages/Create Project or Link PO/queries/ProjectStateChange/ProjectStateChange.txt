@@ -1,0 +1,4 @@
+UPDATE Project
+SET 
+	State = {{this.params?.State}}
+WHERE Id = {{this.params?.Id}};

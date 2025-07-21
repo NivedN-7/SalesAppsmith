@@ -1,0 +1,24 @@
+{
+  "unpublishedCollection": {
+    "name": "FileUploadProcess",
+    "pageId": "Create Project or Link PO",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "fileUploadStruct",
+        "value": "{\n  \"EstimatePO\": {\n    'Title': \"Upload PO Files\",\n    'DriveId': 'b!9sncToW8AUeetDafxm9_qHQ1D99nS8NIu4I1_LuTxxjEP0Mcv7wWRoPeiPnjDKd2',\n    'DriveItemId': '01WIYHH3V6Y2GOVW7725BZO354PWSELRRZ',\n    'SharepointId': 'anoralabs.sharepoint.com,4edcc9f6-bc85-4701-9eb4-369fc66f7fa8,df0f3574-4b67-48c3-bb82-35fcbb93c718',\n    'ListId': '1c433fc4-bcbf-4616-83de-88f9e30ca776'\n  }\n}"
+      },
+      {
+        "name": "fileUploadStructProd",
+        "value": "{\n  \"EstimatePO\": {\n    'Title': \"Upload Quote Files\",\n    'DriveId': 'b!9sncToW8AUeetDafxm9_qIKKA-4bAhtFjvt40BOkn5UZ2f5-H_OFQ6HZkIUS5qEP',\n    'DriveItemId': '01FIWJAG56Y2GOVW7725BZO354PWSELRRZ',\n    'SharepointId': 'anoralabs.sharepoint.com,4edcc9f6-bc85-4701-9eb4-369fc66f7fa8,ee038a82-021b-451b-8efb-78d013a49f95',\n    'ListId': '7efed919-f31f-4385-a1d9-908512e6a10f'\n  }\n}"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "Create Project or Link PO_FileUploadProcess",
+  "deleted": false,
+  "gitSyncId": "67eb878464a6b3272c5b6b55_680f0961df67662ade9f6a51"
+}

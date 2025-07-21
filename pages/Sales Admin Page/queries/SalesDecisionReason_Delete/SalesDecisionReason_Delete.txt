@@ -1,0 +1,3 @@
+UPDATE SalesDecisionReason 
+  SET Deleted = 1 
+	WHERE Name = {{SalesReason_Table.selectedRow.Name}};

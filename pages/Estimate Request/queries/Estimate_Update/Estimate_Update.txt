@@ -1,0 +1,5 @@
+UPDATE Estimate 
+SET    EmailList = {{Email_Input.text}},
+		   CCEmailList = {{CCEmail_Input.text}},
+		   Notes = {{Estimate_Note_input.text}}
+WHERE  Id = {{Estimate_Table.selectedRow.EId}}

@@ -1,0 +1,5 @@
+INSERT INTO Estimate 
+           (SalesId, CurrentState, Deleted)
+VALUES 
+           ({{this.params?.salesId}}, 
+						'Prepare', 0);

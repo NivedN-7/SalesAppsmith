@@ -1,0 +1,5 @@
+SELECT 	Estimate.Number AS ENumber, Sales.Number As SNumber,PurchaseOrder.Number AS PONumber
+				FROM PurchaseOrder
+LEFT JOIN Estimate ON PurchaseOrder.EstimateId = Estimate.Id
+LEFT JOIN Sales ON Estimate.SalesId = Sales.Id
+WHERE PurchaseOrder.Id = {{this.params?.POId}}

@@ -1,0 +1,5 @@
+SELECT COUNT(*) as Count 
+FROM AppUser 
+INNER JOIN UserRole ON AppUser.Id = UserRole.UserId 
+INNER JOIN Role ON UserRole.RoleId = Role.Id 
+WHERE Role.Name IN ({{this.params?.roles}}) and AppUser.UserName = '{{this.params?.userName}}'

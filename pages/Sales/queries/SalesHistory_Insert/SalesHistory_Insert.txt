@@ -1,0 +1,6 @@
+INSERT INTO SalesHistory 
+       (SalesId, SalesState, Date, Deleted)
+VALUES 
+       ({{this.params?.salesId}}, 
+				{{this.params?.nextState}}, 
+				{{moment().format('YYYY-MM-DD')}}, 0);
