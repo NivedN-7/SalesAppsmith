@@ -18,16 +18,16 @@
     "overflow": "NONE",
     "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
     "parentColumnSpace": 22.421875,
+    "dynamicTriggerPathList": [],
     "leftColumn": 21,
     "dynamicBindingPathList": [
         {"key": "truncateButtonColor"},
         {"key": "fontFamily"},
-        {"key": "borderRadius"},
-        {"key": "text"}
+        {"key": "borderRadius"}
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "Hello {{appsmith.user.name || appsmith.user.email}}",
+    "text": "Hello labs accnt",
     "key": "84159a2pu4",
     "isDeprecated": false,
     "rightColumn": 37,
@@ -48,9 +48,11 @@
     "isLoading": false,
     "mobileTopRow": 20,
     "responsiveBehavior": "fill",
+    "originalTopRow": 20,
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 21,
     "maxDynamicHeight": 9000,
+    "originalBottomRow": 24,
     "fontSize": "1rem",
     "minDynamicHeight": 4
 }
